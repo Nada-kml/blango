@@ -38,6 +38,7 @@ class Dev(Configuration):
     CSRF_COOKIE_SAMESITE = 'None'
     SESSION_COOKIE_SAMESITE = 'None'
     # Application definition
+    AUTH_USER_MODEL = "blango_auth.User"
 
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -46,6 +47,7 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'blango_auth',
         'blog',
         'crispy_forms',
         'crispy_bootstrap5',
