@@ -25,7 +25,6 @@ class Dev(Configuration):
 
     # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = 'django-insecure-+sn%dpa!086+g+%44z9*^j^q-u4n!j(#wl)x9a%_1op@zz2+1-'
-
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = values.BooleanValue(True)
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
@@ -41,7 +40,8 @@ class Dev(Configuration):
     SESSION_COOKIE_SAMESITE = 'None'
     # Application definition
     AUTH_USER_MODEL = "blango_auth.User"
-
+    MEDIA_ROOT = BASE_DIR / "media"
+    MEDIA_URL = "/media/"
     INSTALLED_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
@@ -63,6 +63,7 @@ class Dev(Configuration):
         "rest_framework.authtoken",
         "drf_yasg",
         "django_filters",
+        "versatileimagefield",
     ]
     REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
